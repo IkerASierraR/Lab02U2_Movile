@@ -1,12 +1,35 @@
 package com.example.deviceretrofitsierra.view
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import com.example.deviceretrofitsierra.data.Device
+import com.example.deviceretrofitsierra.ui.theme.Typography
 
 @Composable
-fun MainView(modifier: Modifier){
+fun MainView(modifier: Modifier, devices: List<Device>){
 
-    Text(text = "Dispositivos", modifier = modifier)
+    Column() {
+        Text(text = "Dispositivos",
+            modifier = modifier.fillMaxWidth(),
+            style = Typography.displayMedium,
+            textAlign = TextAlign.Center)
+
+        LazyColumn() {
+            items(devices.size){index ->
+                DeviceItemView(device = devices[index])
+
+            }
+        }
+
+    }
+
+
+
+
 
 }

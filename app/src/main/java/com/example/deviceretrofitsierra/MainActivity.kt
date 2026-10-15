@@ -11,7 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.deviceretrofitsierra.data.Device
+import com.example.deviceretrofitsierra.data.Spec
 import com.example.deviceretrofitsierra.ui.theme.DeviceRetrofitSierraTheme
+import com.example.deviceretrofitsierra.view.MainView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +23,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             DeviceRetrofitSierraTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    MainView(modifier = Modifier.padding(innerPadding),
+                        listOf(Device(1,
+                            "Google Pixel 6 Pro",
+                            Spec("While", "158Gb", "Celphone")
+                        ), Device(2,
+                            "iPgone 17 Pro",
+                            null)
+                        )
+                        )
                 }
             }
         }

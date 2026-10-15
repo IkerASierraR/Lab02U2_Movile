@@ -29,7 +29,4 @@ fun MainView(modifier: Modifier, devices: List<Device>){
     }
 
 
-
-
-
 }

@@ -28,8 +28,8 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 
 androidx-compose-material-icons-extended = {module = "androidx.compose.material:material-icons-extended"}
-retrofit = { module = "com.aquareup.retrofit2:retrofit", version.ref = "retrofit" }
-converter-gson = { module = "com.aquareup.retrofit2:converter-gson", version.ref = "converterGson" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

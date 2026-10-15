@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.deviceretrofitsierra"
-        minSdk = 33
+        minSdk = 30
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"

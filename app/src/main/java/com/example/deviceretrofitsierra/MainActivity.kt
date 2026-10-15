@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
                             "Google Pixel 6 Pro",
                             Spec("While", "158Gb", "Celphone")
                         ), Device(2,
-                            "iPgone 17 Pro",
+                            "iPhone 17 Pro",
                             null)
                         )
                         )

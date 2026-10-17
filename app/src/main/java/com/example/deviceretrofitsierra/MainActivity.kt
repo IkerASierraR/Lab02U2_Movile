@@ -28,6 +28,16 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : ComponentActivity() {
+
+    private val service by lazy{
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val service = retrofit.create(DeviceService::class.java)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -45,20 +55,11 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
     private fun getDevices(onResult: (List<Device>)->Unit){
-        val retrofit = Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val service = retrofit.create(DeviceService::class.java)
-
-        lifecycleScope.launch{
+            lifecycleScope.launch{
             val devices = service.getAllDevices()
             onResult(devices)
         }
-
     }
 }
 

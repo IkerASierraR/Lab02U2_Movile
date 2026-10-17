@@ -39,7 +39,7 @@
                     Text(device.name)
                     HorizontalDivider()
                     Text(device.data?.color ?: "-")
-                    Text(device.data?.price ?: "-")
+                    Text(device.data?.price?.toString() ?: "-")
                     Text(device.data?.capacity ?: "-")
                     Text(device.data?.description ?: "-")
 
